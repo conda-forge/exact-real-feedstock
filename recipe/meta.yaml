@@ -1,5 +1,5 @@
 {% set name = "exact-real" %}
-{% set version = "2.1.0" %}
+{% set version = "2.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://github.com/flatsurf/exact-real/releases/download/{{ version }}/exact-real-{{ version }}.tar.gz
-  sha256: a592761c6d4999919be2354d17608542b9e21572b93e402e4fa96d22fcae76da
+  sha256: f7492c1d774aa4eaf2c4cbd0a48c7a7fb22b4a2cf8f268bae26b6d4a7122839d
   patches:
     - macos.patch  # [osx]
 
 build:
-  number: 1
+  number: 0
   # dependency libeantic is not available for Windows on conda-forge yet
   skip: true  # [win]
 
