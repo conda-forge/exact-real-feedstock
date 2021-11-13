@@ -1,5 +1,5 @@
 {% set name = "exact-real" %}
-{% set version = "2.2.0" %}
+{% set version = "2.2.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/flatsurf/exact-real/releases/download/{{ version }}/exact-real-{{ version }}.tar.gz
-  sha256: f7492c1d774aa4eaf2c4cbd0a48c7a7fb22b4a2cf8f268bae26b6d4a7122839d
+  sha256: 109fcca744f4462911fb70ae94c0a8a5fd4cc4456e3f53752f3387568f8b74b2
   patches:
     - macos.patch  # [osx]
 
