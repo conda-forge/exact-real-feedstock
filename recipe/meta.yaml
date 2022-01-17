@@ -8,8 +8,6 @@ package:
 source:
   url: https://github.com/flatsurf/exact-real/releases/download/{{ version }}/exact-real-{{ version }}.tar.gz
   sha256: bf71dec2fbda5ffa53369f1d23e2c6fe276586eb377cbd1586e1a71f4e28182f
-  patches:
-    - macos.patch  # [osx]
 
 build:
   number: 0
