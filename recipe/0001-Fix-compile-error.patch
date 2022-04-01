@@ -1,0 +1,25 @@
+From c874aacccda824e9917b4c99ff663ebf17e1c33f Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Julian=20R=C3=BCth?= <julian.rueth@fsfe.org>
+Date: Fri, 1 Apr 2022 14:10:26 +0200
+Subject: [PATCH] Fix compile error
+
+---
+ libexactreal/src/element.cc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/libexactreal/src/element.cc b/libexactreal/src/element.cc
+index 0d2d452..9f02adb 100644
+--- a/libexactreal/src/element.cc
++++ b/libexactreal/src/element.cc
+@@ -160,7 +160,7 @@ std::vector<mpq_class> Element<Ring>::rationalCoefficients() const {
+     }
+     return ret;
+   } else {
+-    static_assert(false_v<typename Ring::ElementClass>, "unsupported coefficient type");
++    static_assert(false_t<typename Ring::ElementClass>, "unsupported coefficient type");
+   }
+ }
+ 
+-- 
+2.35.1
+
