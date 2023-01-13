@@ -8,8 +8,6 @@ package:
 source:
   url: https://github.com/flatsurf/exact-real/releases/download/{{ version }}/exact-real-{{ version }}.tar.gz
   sha256: 1d26da10e755521e3855908afae13ee4f7d206e7ba38ee2fe368bc43d636ce4b
-  patches:
-    - 0001-Fix-compile-error.patch
 
 build:
   number: 0
