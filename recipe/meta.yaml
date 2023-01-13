@@ -13,6 +13,8 @@ build:
   number: 0
   # dependency libeantic is not available for Windows on conda-forge yet
   skip: true  # [win]
+  patches:
+    0001-Do-not-use-variant-which-is-unsupported-on-some-vers.patch
 
 outputs:
   - name: libexactreal
