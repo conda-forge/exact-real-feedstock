@@ -1,5 +1,5 @@
 {% set name = "exact-real" %}
-{% set version = "3.0.0" %}
+{% set version = "3.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,9 +7,7 @@ package:
 
 source:
   url: https://github.com/flatsurf/exact-real/releases/download/{{ version }}/exact-real-{{ version }}.tar.gz
-  sha256: 1d26da10e755521e3855908afae13ee4f7d206e7ba38ee2fe368bc43d636ce4b
-  patches:
-    0001-Do-not-use-variant-which-is-unsupported-on-some-vers.patch
+  sha256: 1e47e4f5c0bfe5fb68e3cd223eec3693508a4904f0b986a0d673fbd38ff14e1b
 
 build:
   number: 0
