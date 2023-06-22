@@ -54,7 +54,7 @@ outputs:
       host:
         - boost-cpp
         - python
-        - cppyy
+        - cppyy >=2.4.2,<3
         - cppyythonizations
         - setuptools
         - pytest
@@ -63,7 +63,7 @@ outputs:
         # cppyy dynamically compiles C++ wrappers at runtime, therefore we need C++ headers of boost.
         - boost-cpp
         - python
-        - cppyy
+        - cppyy >=2.4.2,<3
         - cppyythonizations
         - pyeantic
         - gmpxxyy
