@@ -1,5 +1,5 @@
 {% set name = "exact-real" %}
-{% set version = "3.0.1" %}
+{% set version = "3.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/flatsurf/exact-real/releases/download/{{ version }}/exact-real-{{ version }}.tar.gz
-  sha256: 1e47e4f5c0bfe5fb68e3cd223eec3693508a4904f0b986a0d673fbd38ff14e1b
+  sha256: bc738a85ad9b8b921a1a431a8545185d58601414bd80c7b7d662480cccd85423
 
 build:
   number: 0
@@ -54,7 +54,7 @@ outputs:
       host:
         - boost-cpp
         - python
-        - cppyy
+        - cppyy >=2.4.2,<3
         - cppyythonizations
         - setuptools
         - pytest
@@ -63,7 +63,7 @@ outputs:
         # cppyy dynamically compiles C++ wrappers at runtime, therefore we need C++ headers of boost.
         - boost-cpp
         - python
-        - cppyy
+        - cppyy >=2.4.2,<3
         - cppyythonizations
         - pyeantic
         - gmpxxyy
