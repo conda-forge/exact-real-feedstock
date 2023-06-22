@@ -1,11 +1,11 @@
-About exact-real
-================
+About exact-real-feedstock
+==========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/exact-real-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/flatsurf/exact-real
 
 Package license: GPL-3.0-or-later
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/exact-real-feedstock/blob/main/LICENSE.txt)
 
 Summary: Lazy computations with real numbers in C++ and Python
 
