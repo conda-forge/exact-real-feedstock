@@ -10,7 +10,7 @@ source:
   sha256: bc738a85ad9b8b921a1a431a8545185d58601414bd80c7b7d662480cccd85423
 
 build:
-  number: 0
+  number: 1
   # dependency libeantic is not available for Windows on conda-forge yet
   skip: true  # [win]
 
@@ -30,7 +30,7 @@ outputs:
         - {{ compiler('cxx') }}
       host:
         - arb
-        - boost-cpp
+        - libboost-headers
         - libeantic >=1.0.2,<2
         - gmp  # [unix]
         - mpir  # [win]
@@ -52,7 +52,7 @@ outputs:
         - gnuconfig  # [unix]
         - {{ compiler('cxx') }}
       host:
-        - boost-cpp
+        - libboost-devel
         - python
         - cppyy >=2.4.2,<3
         - cppyythonizations
@@ -61,7 +61,6 @@ outputs:
         - {{ pin_subpackage("libexactreal") }}
       run:
         # cppyy dynamically compiles C++ wrappers at runtime, therefore we need C++ headers of boost.
-        - boost-cpp
         - python
         - cppyy >=2.4.2,<3
         - cppyythonizations
