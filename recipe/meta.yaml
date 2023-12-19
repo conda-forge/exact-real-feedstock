@@ -10,7 +10,7 @@ source:
   sha256: bc738a85ad9b8b921a1a431a8545185d58601414bd80c7b7d662480cccd85423
 
 build:
-  number: 0
+  number: 1
   # dependency libeantic is not available for Windows on conda-forge yet
   skip: true  # [win]
 
