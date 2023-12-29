@@ -61,7 +61,7 @@ outputs:
         - {{ pin_subpackage("libexactreal") }}
       run:
         # cppyy dynamically compiles C++ wrappers at runtime, therefore we need C++ headers of boost.
-        - liboost-headers
+        - libboost-headers
         - python
         - cppyy >=3,<4
         - cppyythonizations
