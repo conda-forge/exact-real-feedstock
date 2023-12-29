@@ -29,7 +29,7 @@ outputs:
         - gnuconfig  # [unix]
         - {{ compiler('cxx') }}
       host:
-        - arb
+        - libflint
         - libboost-headers
         - libeantic >=2,<3
         - gmp  # [unix]
