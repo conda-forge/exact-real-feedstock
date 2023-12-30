@@ -12,6 +12,8 @@ gmp:
 - '6'
 libboost_devel:
 - '1.82'
+libeantic:
+- '2'
 libflint:
 - '2.9'
 macos_machine:
