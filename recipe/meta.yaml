@@ -10,7 +10,7 @@ source:
   sha256: 02cfef7aa18c316bafaf0d80163dc3d1bc25c804bf862d86353cde656931e0c3
 
 build:
-  number: 1
+  number: 2
   # dependency libeantic is not available for Windows on conda-forge yet
   skip: true  # [win]
 
@@ -30,7 +30,12 @@ outputs:
         - {{ compiler('cxx') }}
       host:
         - libflint
-        - libboost-headers
+        # We only need the libboost-headers at compile time. However, since we
+        # use bits of boost in our API, code built against libexactreal must be
+        # built with a compatible version of the headers. Therefore, we add a
+        # liboost pin to our run exports so libbookst-headers are going to be
+        # in a compatible version.
+        - libboost-devel
         - libeantic >=2,<3
         - gmp  # [unix]
         - mpir  # [win]
@@ -52,6 +57,8 @@ outputs:
         - gnuconfig  # [unix]
         - {{ compiler('cxx') }}
       host:
+        # Note that the liboost-devel from libexactreal forces these headers to be
+        # compatible with ones used when building libexactreal.
         - libboost-headers
         - python
         - cppyy >=3,<4
@@ -61,6 +68,8 @@ outputs:
         - {{ pin_subpackage("libexactreal") }}
       run:
         # cppyy dynamically compiles C++ wrappers at runtime, therefore we need C++ headers of boost.
+        # Note that the liboost-devel from libexactreal forces these headers to be
+        # compatible with ones used when building libexactreal.
         - libboost-headers
         - python
         - cppyy >=3,<4
