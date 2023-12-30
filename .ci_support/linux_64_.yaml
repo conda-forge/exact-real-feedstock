@@ -1,5 +1,3 @@
-arb:
-- '2.23'
 cdt_name:
 - cos6
 channel_sources:
@@ -16,6 +14,10 @@ gmp:
 - '6'
 libboost_devel:
 - '1.82'
+libeantic:
+- '2'
+libflint:
+- '3.0'
 pin_run_as_build:
   python:
     min_pin: x.x
