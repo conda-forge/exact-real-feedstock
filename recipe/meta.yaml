@@ -36,7 +36,7 @@ outputs:
         # liboost pin to our run exports so libbookst-headers are going to be
         # in a compatible version.
         - libboost-devel
-        - libeantic >=2,<3
+        - libeantic
         - gmp  # [unix]
         - mpir  # [win]
     test:
