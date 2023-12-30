@@ -57,7 +57,7 @@ outputs:
         - gnuconfig  # [unix]
         - {{ compiler('cxx') }}
       host:
-        # Note that the liboost-devel from libexactreal forces these headers to be
+        # Note that the libboost-devel from libexactreal forces these headers to be
         # compatible with ones used when building libexactreal.
         - libboost-headers
         - python
@@ -68,7 +68,7 @@ outputs:
         - {{ pin_subpackage("libexactreal") }}
       run:
         # cppyy dynamically compiles C++ wrappers at runtime, therefore we need C++ headers of boost.
-        # Note that the liboost-devel from libexactreal forces these headers to be
+        # Note that the libboost-devel from libexactreal forces these headers to be
         # compatible with ones used when building libexactreal.
         - libboost-headers
         - python
