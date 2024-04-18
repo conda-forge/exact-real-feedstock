@@ -10,7 +10,7 @@ source:
   sha256: 02cfef7aa18c316bafaf0d80163dc3d1bc25c804bf862d86353cde656931e0c3
 
 build:
-  number: 3
+  number: 4
   # dependency libeantic is not available for Windows on conda-forge yet
   skip: true  # [win]
 
@@ -28,6 +28,7 @@ outputs:
         - autotools_clang_conda  # [win]
         - gnuconfig  # [unix]
         - {{ compiler('cxx') }}
+        - {{ stdlib("c") }}
       host:
         - libflint
         # We only need the libboost-headers at compile time. However, since we
@@ -56,6 +57,7 @@ outputs:
         - autotools_clang_conda  # [win]
         - gnuconfig  # [unix]
         - {{ compiler('cxx') }}
+        - {{ stdlib("c") }}
       host:
         # Note that the libboost-devel from libexactreal forces these headers to be
         # compatible with ones used when building libexactreal.
