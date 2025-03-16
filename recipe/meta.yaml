@@ -44,6 +44,7 @@ outputs:
       commands:
         - test -f $PREFIX/include/exact-real/exact-real.hpp  # [unix]
         - test -f $PREFIX/lib/libexactreal${SHLIB_EXT}                # [unix]
+
   - name: pyexactreal
     script: build-pyexactreal.sh  # [not win]
     script: bld-pyexactreal.bat  # [win]
@@ -59,9 +60,11 @@ outputs:
         - {{ compiler('cxx') }}
         - {{ stdlib("c") }}
       host:
+        - icu
         # Note that the libboost-devel from libexactreal forces these headers to be
         # compatible with ones used when building libexactreal.
         - libboost-headers
+        - libxml2
         - python
         - cppyy >=3,<4
         - cppyythonizations
