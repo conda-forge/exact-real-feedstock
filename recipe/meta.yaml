@@ -10,7 +10,7 @@ source:
   sha256: 02cfef7aa18c316bafaf0d80163dc3d1bc25c804bf862d86353cde656931e0c3
 
 build:
-  number: 4
+  number: 5
   # dependency libeantic is not available for Windows on conda-forge yet
   skip: true  # [win]
 
@@ -44,6 +44,7 @@ outputs:
       commands:
         - test -f $PREFIX/include/exact-real/exact-real.hpp  # [unix]
         - test -f $PREFIX/lib/libexactreal${SHLIB_EXT}                # [unix]
+
   - name: pyexactreal
     script: build-pyexactreal.sh  # [not win]
     script: bld-pyexactreal.bat  # [win]
@@ -59,9 +60,11 @@ outputs:
         - {{ compiler('cxx') }}
         - {{ stdlib("c") }}
       host:
+        - icu
         # Note that the libboost-devel from libexactreal forces these headers to be
         # compatible with ones used when building libexactreal.
         - libboost-headers
+        - libxml2
         - python
         - cppyy >=3,<4
         - cppyythonizations

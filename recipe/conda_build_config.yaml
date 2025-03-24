@@ -1,3 +1,2 @@
-# Due to the pin at https://github.com/conda-forge/cppyy-feedstock/blob/main/recipe/meta.yaml#LL41C11-L41C89 we have to build with an older version of the compiler
 cxx_compiler_version:  # [osx]
-- 14                   # [osx]
+- 16                   # [osx]
