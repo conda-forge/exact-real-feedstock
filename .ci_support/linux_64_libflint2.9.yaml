@@ -17,7 +17,7 @@ docker_image:
 gmp:
 - '6'
 icu:
-- '73'
+- '75'
 libboost_devel:
 - '1.86'
 libboost_headers:
