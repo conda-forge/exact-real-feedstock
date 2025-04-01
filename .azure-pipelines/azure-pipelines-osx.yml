@@ -8,6 +8,9 @@ jobs:
     vmImage: macOS-13
   strategy:
     matrix:
+      osx_64_libflint2.9:
+        CONFIG: osx_64_libflint2.9
+        UPLOAD_PACKAGES: 'True'
       osx_64_libflint3.0:
         CONFIG: osx_64_libflint3.0
         UPLOAD_PACKAGES: 'True'
