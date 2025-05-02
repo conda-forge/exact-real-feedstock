@@ -34,59 +34,17 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64_libflint2.9</td>
+              <td>linux_64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13676&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/exact-real-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_libflint2.9" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/exact-real-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_libflint3.0</td>
+              <td>osx_64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13676&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/exact-real-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_libflint3.0" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_64_libflint3.1</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13676&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/exact-real-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_libflint3.1" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_64_libflint3.2</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13676&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/exact-real-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_libflint3.2" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_64_libflint2.9</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13676&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/exact-real-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_libflint2.9" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_64_libflint3.0</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13676&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/exact-real-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_libflint3.0" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_64_libflint3.1</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13676&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/exact-real-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_libflint3.1" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_64_libflint3.2</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13676&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/exact-real-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_libflint3.2" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/exact-real-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_" alt="variant">
                 </a>
               </td>
             </tr>
