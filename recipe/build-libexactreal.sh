@@ -9,7 +9,7 @@ if [[ "$target_platform" == osx* ]]; then
     # https://github.com/flatsurf/sage-flatsurf/pull/345#issuecomment-2846128058
     CXXFLAGS="$CXXFLAGS -fclang-abi-compat=17"
     # macOS does not support std::uncaught_exceptions() before 10.12
-    CXXFLAGS="-DCATCH_CONFIG_NO_CPP17_UNCAUGHT_EXCEPTIONS"
+    CXXFLAGS="$CXXFLAGS -DCATCH_CONFIG_NO_CPP17_UNCAUGHT_EXCEPTIONS"
 fi
 
 if [[ "$target_platform" == win* ]]; then
