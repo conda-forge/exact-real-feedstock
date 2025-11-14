@@ -84,9 +84,9 @@ outputs:
         # A subpackage does not see the run_exports of another subpackage:
         # https://github.com/conda/conda-build/issues/3478
         - {{ pin_subpackage("libexactreal") }}
-    test:
-      imports:
-        - pyexactreal
+    test:              # [build_platform == target_platform]
+      imports:         # [build_platform == target_platform]
+        - pyexactreal  # [build_platform == target_platform]
 
 about:
   home: https://github.com/flatsurf/exact-real
