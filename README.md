@@ -1,5 +1,5 @@
-About exact-real-feedstock
-==========================
+About libexactreal-feedstock
+============================
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/exact-real-feedstock/blob/main/LICENSE.txt)
 
@@ -15,12 +15,18 @@ exact-real is a C++/Python library which provides exact lazy computations
 in the Real Numbers. In particular it provides arithmetic and comparisons
 of (random) transcendental numbers.
 
-
 Current build status
 ====================
 
 
-<table>
+<table><tr>
+    <td>GitHub Actions</td>
+    <td>
+      <a href="https://github.com/conda-forge/exact-real-feedstock/actions/workflows/conda-build.yml">
+        <img src="https://github.com/conda-forge/exact-real-feedstock/actions/workflows/conda-build.yml/badge.svg?event=push&branch=main">
+      </a>
+    </td>
+  </tr>
     
   <tr>
     <td>Azure</td>
@@ -34,13 +40,6 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13676&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/exact-real-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
               <td>osx_64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13676&branchName=main">
@@ -70,41 +69,83 @@ Current release info
 | [![Conda Recipe](https://img.shields.io/badge/recipe-libexactreal-green.svg)](https://anaconda.org/conda-forge/libexactreal) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libexactreal.svg)](https://anaconda.org/conda-forge/libexactreal) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libexactreal.svg)](https://anaconda.org/conda-forge/libexactreal) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libexactreal.svg)](https://anaconda.org/conda-forge/libexactreal) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-pyexactreal-green.svg)](https://anaconda.org/conda-forge/pyexactreal) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pyexactreal.svg)](https://anaconda.org/conda-forge/pyexactreal) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pyexactreal.svg)](https://anaconda.org/conda-forge/pyexactreal) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pyexactreal.svg)](https://anaconda.org/conda-forge/pyexactreal) |
 
-Installing exact-real
-=====================
+Installing libexactreal
+=======================
 
-Installing `exact-real` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `libexactreal` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `libexactreal, pyexactreal` can be installed with `conda`:
+How to use
+----------
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda install libexactreal pyexactreal
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba install libexactreal pyexactreal
 ```
 
-It is possible to list all of the versions of `libexactreal` available on your platform with `conda`:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+# for adding to your local project
+pixi add libexactreal pyexactreal
+# for installing globally
+pixi global install libexactreal pyexactreal
+```
+
+</details>
+
+Search package versions
+-----------------------
+
+It is possible to list all of the versions of `libexactreal` available on your platform:
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda search libexactreal --channel conda-forge
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba search libexactreal --channel conda-forge
 ```
 
-Alternatively, `mamba repoquery` may provide more information:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+pixi search libexactreal --channel conda-forge
+```
+
+</details>
+
+<details>
+<summary>With mamba repoquery, which may provide more information</summary>
 
 ```
 # Search all versions available on your platform:
@@ -116,6 +157,9 @@ mamba repoquery whoneeds libexactreal --channel conda-forge
 # List dependencies of `libexactreal`:
 mamba repoquery depends libexactreal --channel conda-forge
 ```
+
+</details>
+
 
 
 About conda-forge
@@ -132,9 +176,7 @@ for each of the installable packages. Such a repository is known as a *feedstock
 A feedstock is made up of a conda recipe (the instructions on what and how to build
 the package) and the necessary configurations for automatic building using freely
 available continuous integration services. Thanks to the awesome service provided by
-[Azure](https://azure.microsoft.com/en-us/services/devops/), [GitHub](https://github.com/),
-[CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/),
-[Drone](https://cloud.drone.io/welcome), and [TravisCI](https://travis-ci.com/)
+[Azure](https://azure.microsoft.com/en-us/services/devops/) and [GitHub](https://github.com/)
 it is possible to build and upload installable packages to the
 [conda-forge](https://anaconda.org/conda-forge) [anaconda.org](https://anaconda.org/)
 channel for Linux, Windows and OSX respectively.
@@ -159,17 +201,17 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating exact-real-feedstock
-=============================
+Updating libexactreal-feedstock
+===============================
 
-If you would like to improve the exact-real recipe or build a new
+If you would like to improve the libexactreal recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/exact-real-feedstock are
+Note that all branches in the conda-forge/libexactreal-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks, and branches in the main repository should only be used to
 build distinct package versions.
