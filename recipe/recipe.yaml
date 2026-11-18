@@ -1,0 +1,129 @@
+schema_version: 1
+
+context:
+  name: exact-real
+  version: "4.0.1"
+
+recipe:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://github.com/flatsurf/exact-real/releases/download/${{ version }}/exact-real-${{ version }}.tar.gz
+  sha256: fb46b909bab58007dae6717cd69697e5caf6abdc39c1405a77c9a37e5cea81f1
+
+build:
+  number: 11
+  # dependency libeantic is not available for Windows on conda-forge yet
+  skip: win
+
+outputs:
+  - package:
+      name: libexactreal
+    build:
+      script:
+        file: ${{ 'build-libexactreal.sh' if not win else 'build-libexactreal.bat' if win else '' }}
+    requirements:
+      build:
+        - if: unix
+          then: libtool
+        - if: unix
+          then: automake
+        - if: unix
+          then: make
+        - if: win
+          then: autotools_clang_conda
+        - if: unix
+          then: gnuconfig
+        - ${{ compiler('cxx') }}
+        - ${{ stdlib("c") }}
+      host:
+        - libflint
+        # We only need the libboost-headers at compile time. However, since we
+        # use bits of boost in our API, code built against libexactreal must be
+        # built with a compatible version of the headers. Therefore, we add a
+        # liboost pin to our run exports so libbookst-headers are going to be
+        # in a compatible version.
+        - libboost-devel
+        - libeantic
+        - if: unix
+          then: gmp
+        - if: win
+          then: mpir
+      run_exports:
+        - ${{ pin_subpackage("libexactreal") }}
+    tests:
+      - script:
+          - if: unix
+            then: test -f $PREFIX/include/exact-real/exact-real.hpp
+          - if: unix
+            then: test -f $PREFIX/lib/libexactreal${SHLIB_EXT}
+  - package:
+      name: pyexactreal
+    build:
+      script:
+        file: ${{ 'build-pyexactreal.sh' if not win else 'bld-pyexactreal.bat' if win else '' }}
+    requirements:
+      build:
+        - if: build_platform != target_platform
+          then: python
+        - if: build_platform != target_platform
+          then: cross-python_${{ target_platform }}
+        - if: unix
+          then: libtool
+        - if: unix
+          then: automake
+        - if: unix
+          then: make
+        - if: win
+          then: autotools_clang_conda
+        - if: unix
+          then: gnuconfig
+        - ${{ compiler('cxx') }}
+        - ${{ stdlib("c") }}
+      host:
+        - icu
+        # Note that the libboost-devel from libexactreal forces these headers to be
+        # compatible with ones used when building libexactreal.
+        - libboost-headers
+        - libxml2-devel
+        - python
+        - cppyy >=3,<4
+        - cppyythonizations
+        - setuptools
+        - pytest
+        - ${{ pin_subpackage("libexactreal") }}
+      run:
+        # cppyy dynamically compiles C++ wrappers at runtime, therefore we need C++ headers of boost.
+        # Note that the libboost-devel from libexactreal forces these headers to be
+        # compatible with ones used when building libexactreal.
+        - libboost-headers
+        - python
+        - cppyy >=3,<4
+        - cppyythonizations
+        - pyeantic
+        - gmpxxyy
+        # A subpackage does not see the run_exports of another subpackage:
+        # https://github.com/conda/conda-build/issues/3478
+        - ${{ pin_subpackage("libexactreal") }}
+    tests:
+      - python:
+          imports:
+            - if: build_platform == target_platform
+              then: pyexactreal
+          pip_check: false
+
+about:
+  license: GPL-3.0-or-later
+  license_file: COPYING
+  summary: Lazy computations with real numbers in C++ and Python
+  description: |
+    exact-real is a C++/Python library which provides exact lazy computations
+    in the Real Numbers. In particular it provides arithmetic and comparisons
+    of (random) transcendental numbers.
+  homepage: https://github.com/flatsurf/exact-real
+  repository: https://github.com/flatsurf/exact-real
+
+extra:
+  recipe-maintainers:
+    - saraedum
