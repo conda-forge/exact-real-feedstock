@@ -25,16 +25,10 @@ outputs:
         file: ${{ 'build-libexactreal.sh' if not win else 'build-libexactreal.bat' if win else '' }}
     requirements:
       build:
-        - if: unix
-          then: libtool
-        - if: unix
-          then: automake
-        - if: unix
-          then: make
-        - if: win
-          then: autotools_clang_conda
-        - if: unix
-          then: gnuconfig
+        - libtool
+        - automake
+        - make
+        - gnuconfig
         - ${{ compiler('cxx') }}
         - ${{ stdlib("c") }}
       host:
@@ -46,18 +40,13 @@ outputs:
         # in a compatible version.
         - libboost-devel
         - libeantic
-        - if: unix
-          then: gmp
-        - if: win
-          then: mpir
+        - gmp
       run_exports:
         - ${{ pin_subpackage("libexactreal") }}
     tests:
       - script:
-          - if: unix
-            then: test -f $PREFIX/include/exact-real/exact-real.hpp
-          - if: unix
-            then: test -f $PREFIX/lib/libexactreal${SHLIB_EXT}
+          - test -f $PREFIX/include/exact-real/exact-real.hpp
+          - test -f $PREFIX/lib/libexactreal${SHLIB_EXT}
   - package:
       name: pyexactreal
     build:
@@ -69,16 +58,10 @@ outputs:
           then: python
         - if: build_platform != target_platform
           then: cross-python_${{ target_platform }}
-        - if: unix
-          then: libtool
-        - if: unix
-          then: automake
-        - if: unix
-          then: make
-        - if: win
-          then: autotools_clang_conda
-        - if: unix
-          then: gnuconfig
+        - libtool
+        - automake
+        - make
+        - gnuconfig
         - ${{ compiler('cxx') }}
         - ${{ stdlib("c") }}
       host:
