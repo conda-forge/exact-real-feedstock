@@ -29,7 +29,7 @@ libflint:
 - '3.2'
 - '3.3'
 - '3.4'
-- '3.5'
+- '3.6'
 libxml2_devel:
 - '2.15'
 macos_machine:
