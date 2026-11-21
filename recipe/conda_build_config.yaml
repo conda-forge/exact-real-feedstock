@@ -3,10 +3,11 @@
 # SageMath (for downstream testing) we built against several releases of FLINT
 # (and not just the latest from the pinning feedstock.)
 libflint:
-- '3.5'
+- '3.6'
 - '2.9'
 - '3.0'
 - '3.1'
 - '3.2'
 - '3.3'
 - '3.4'
+- '3.5'
