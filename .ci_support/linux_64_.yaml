@@ -19,9 +19,9 @@ gmp:
 icu:
 - '78'
 libboost_devel:
-- '1.88'
+- '1.90'
 libboost_headers:
-- '1.88'
+- '1.90'
 libeantic:
 - '2'
 libflint:
