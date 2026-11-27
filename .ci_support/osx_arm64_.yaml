@@ -11,11 +11,11 @@ channel_targets:
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '21'
+- '22'
 gmp:
 - '6'
 icu:
-- '78'
+- '79'
 libboost_devel:
 - '1.90'
 libboost_headers:
